@@ -9,3 +9,12 @@ phaseOffsetFL = np.pi/4
 amplitudeBL = np.pi/4
 frequencyBL = 20
 phaseOffsetBL = 0
+
+minRange = 0
+
+maxRange = 2 * np.pi
+
+loop = 1000
+
+y = np.linspace(0,2 * np.pi, num=1000)
+targetAngles = np.sin(y)
