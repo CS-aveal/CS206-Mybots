@@ -16,6 +16,8 @@ class SIMULATION:
         p.setGravity(0,0,-9.8)
 
         self.world = wor.WORLD()
+        # for x in range(5):
+        #     self.robot = rob.ROBOT()
         self.robot = rob.ROBOT()
 
 
