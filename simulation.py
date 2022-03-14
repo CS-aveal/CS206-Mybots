@@ -22,7 +22,7 @@ class SIMULATION:
 
     def Run(self):
         for x in range(constants.loop):
-          time.sleep(1/240)
+          time.sleep(1/60)
           print(x)
           p.stepSimulation()
           self.robot.Sense(x)

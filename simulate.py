@@ -10,6 +10,10 @@ import constants as c
 
 simulate = SIMULATION()
 simulate.Run()
+
+
+
+
 # #connecting to the engine
 # physicsClient = p.connect(p.GUI)
 # p.setAdditionalSearchPath(pybullet_data.getDataPath())
