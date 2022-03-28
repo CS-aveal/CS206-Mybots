@@ -21,4 +21,6 @@ targetAngles = np.sin(y)
 
 numberOfGenerations = 10
 
+defaultFit = -0.018336037653125914
+
 populationSize = 10

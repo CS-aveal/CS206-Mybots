@@ -1,6 +1,7 @@
 import numpy as np
 import time
 import random
+import constants
 import os
 import pyrosim.pyrosim as pyrosim
 
@@ -25,7 +26,7 @@ class SOLUTION:
         fitnessFile = "fitness" + strID + ".txt"
 
 
-        os.system("python3 simulate.py " + directOrGUI + " " + strID + " &")
+        os.system("python3 simulate.py " + directOrGUI + " " + strID + "2&>1 &")
 
         while not os.path.exists(fitnessFile):
             time.sleep(0.01)
@@ -111,7 +112,11 @@ class SOLUTION:
             time.sleep(0.01)
         f = open(fitnessFile, "r")
         x = f.read()
-        self.fitness = float(x)
+        try:
+            self.fitness = float(x)
+        except ValueError:
+            self.fitness = constants.defaultFit
+
         f.close()
         os.system("rm fitness" + strID + ".txt")
 

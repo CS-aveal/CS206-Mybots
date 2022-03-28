@@ -41,7 +41,7 @@ class PARALLEL_HILL_CLIMBER:
         #     self.Evolve_For_One_Generation()
         #UNEEDED CODE
 
-        for currentGeneration in  range(1):
+        for currentGeneration in  range(constants.numberOfGenerations):
             self.Evolve_For_One_Generation()
 
 
@@ -52,7 +52,7 @@ class PARALLEL_HILL_CLIMBER:
 
         self.Spawn()
         #
-        # self.Mutate()
+        self.Mutate()
         #
         # directOrGUI = "DIRECT"
         #
@@ -87,7 +87,7 @@ class PARALLEL_HILL_CLIMBER:
 
     def Mutate(self):
         for x in range(len(self.children)):
-            self.chidren[x].Mutate()
+            self.children[x].Mutate()
 
 
 
