@@ -18,3 +18,7 @@ loop = 1000
 
 y = np.linspace(0,2 * np.pi, num=1000)
 targetAngles = np.sin(y)
+
+numberOfGenerations = 10
+
+populationSize = 10

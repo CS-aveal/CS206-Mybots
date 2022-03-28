@@ -1,4 +1,5 @@
 from simulation import SIMULATION
+import sys
 import random
 import pybullet_data
 import pybullet as p
@@ -8,10 +9,15 @@ import numpy as np
 import constants as c
 
 
-simulate = SIMULATION()
-simulate.Run()
+directOrGUI = sys.argv[1]
 
+solutionID = sys.argv[2]
 
+simulation = SIMULATION(directOrGUI, solutionID)
+
+simulation.Run()
+
+simulation.Get_Fitness()
 
 
 # #connecting to the engine
