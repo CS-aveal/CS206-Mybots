@@ -23,4 +23,10 @@ numberOfGenerations = 10
 
 defaultFit = -0.018336037653125914
 
+numSensorNeurons = 3
+
+numMotorNeurons = 2
+
 populationSize = 10
+
+motorJointRange = 0.2
