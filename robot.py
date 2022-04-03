@@ -48,12 +48,12 @@ class ROBOT:
 
 
     def Get_Fitness(self):
-        stateOfLinkZero = p.getLinkState(self.robotId,0)
-        positionOfLinkZero = stateOfLinkZero[0]
-        xCoordinateOfLinkZero = positionOfLinkZero[0]
+        basePositionAndOrientation = p.getBasePositionAndOrientation(self.robotId)
+        basePosition = basePositionAndOrientation[0]
+        xPosition = basePosition[0]
         strSolutionID = str(self.solutionID)
         f = open("tmp" + strSolutionID + ".txt", "w")
         os.system("mv tmp" + strSolutionID + ".txt fitness" + strSolutionID + ".txt")
-        strcord = str(xCoordinateOfLinkZero)
+        strcord = str(xPosition)
         f.write(strcord)
         f.close()

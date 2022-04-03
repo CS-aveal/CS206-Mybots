@@ -8,7 +8,7 @@ import pyrosim.pyrosim as pyrosim
 class SOLUTION:
 
     def __init__(self, nextAvailableID):
-        self.weights = np.random.rand(constants.numSensorNeurons,constants.numMotorNeurons)
+        self.weights = np.random.rand(constants.numSensorNeurons,constants.numMotorNeurons) * 2 - 1
         self.myID = nextAvailableID
 
 
