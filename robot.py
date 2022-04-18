@@ -21,8 +21,10 @@ class ROBOT:
         os.system("rm brain" + strSolutionID + ".nndf")
 
     def Sense(self, t):
+        l = 0
         for linkName in pyrosim.linkNamesToIndices:
-            self.sensors[linkName].Get_Value(t)
+            self.sensors[linkName].Get_Value(t, l)
+            l = l + 1
 
 
     def Prepare_To_Sense(self):
