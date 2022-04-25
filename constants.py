@@ -35,6 +35,8 @@ rownum = 0
 
 colnum = 0
 
+a = 0
+
 matrix = []
 
 rowavg = 0
