@@ -27,7 +27,7 @@ numSensorNeurons = 8
 
 numMotorNeurons = 8
 
-populationSize = 10
+populationSize = 50
 
 motorJointRange = 0.2
 
@@ -36,6 +36,8 @@ rownum = 0
 colnum = 0
 
 matrix = []
+
+rowavg = 0
 
 row1 = []
 row2 = []
