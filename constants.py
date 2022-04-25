@@ -14,7 +14,7 @@ minRange = 0
 
 maxRange = 2 * np.pi
 
-loop = 1000
+loop = 10
 
 y = np.linspace(0,2 * np.pi, num=1000)
 targetAngles = np.sin(y)
@@ -30,3 +30,23 @@ numMotorNeurons = 2
 populationSize = 10
 
 motorJointRange = 0.2
+
+rownum = 0
+
+colnum = 0
+
+matrix = []
+
+row1 = []
+row2 = []
+row3 = []
+row4 = []
+row5 = []
+row6 = []
+row7 = []
+row8 = []
+row9 = []
+row10 = []
+
+
+

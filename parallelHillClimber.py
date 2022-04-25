@@ -1,5 +1,7 @@
 from solution import SOLUTION
 import constants
+from tempfile import TemporaryFile
+import numpy as np
 import os
 import copy
 
@@ -13,11 +15,17 @@ class PARALLEL_HILL_CLIMBER:
 
         self.nextAvailableID = 0
 
+        self.row = 0
+        self.col = 0
+
+        self.numgenxpop = 0
+
 
         self.parents = {}
         for x in range(0, constants.populationSize):
             self.parents[x] = SOLUTION(self.nextAvailableID)
             self.nextAvailableID = self.nextAvailableID + 1
+
 
 
 
@@ -43,8 +51,8 @@ class PARALLEL_HILL_CLIMBER:
 
         for currentGeneration in  range(constants.numberOfGenerations):
             self.Evolve_For_One_Generation()
-
-
+            self.row = self.row + 1
+            constants.rownum = self.row
 
 
 
@@ -96,14 +104,83 @@ class PARALLEL_HILL_CLIMBER:
         for x in range(len(self.parents)):
             if self.children[x].fitness < self.parents[x].fitness:
                 self.parents[x] = self.children[x]
+                if (constants.rownum % constants.numberOfGenerations == 0):
+                    # it is in the first row
+                    constants.row1.insert(self.parents[x].col, self.parents[x].fitness)
+                elif (constants.rownum % constants.numberOfGenerations == 1):
+                    # its the second row
+                    constants.row2.insert(self.parents[x].col, self.parents[x].fitness)
+                elif (constants.rownum % constants.numberOfGenerations == 2):
+                    # it is in the third row
+                    constants.row3.insert(self.parents[x].col, self.parents[x].fitness)
+                elif (constants.rownum % constants.numberOfGenerations == 3):
+                    # its the second row
+                    constants.row4.insert(self.parents[x].col, self.parents[x].fitness)
+                elif (constants.rownum % constants.numberOfGenerations == 4):
+                    # its the second row
+                    constants.row5.insert(self.parents[x].col, self.parents[x].fitness)
+                elif (constants.rownum % constants.numberOfGenerations == 5):
+                    # its the second row
+                    constants.row6.insert(self.parents[x].col, self.parents[x].fitness)
+                elif (constants.rownum % constants.numberOfGenerations == 6):
+                    # its the second row
+                    constants.row7.insert(self.parents[x].col, self.parents[x].fitness)
+                elif (constants.rownum % constants.numberOfGenerations == 7):
+                    # its the second row
+                    constants.row8.insert(self.parents[x].col, self.parents[x].fitness)
+                elif (constants.rownum % constants.numberOfGenerations == 8):
+                    # its the second row
+                    constants.row9.insert(self.parents[x].col, self.parents[x].fitness)
+                elif (constants.rownum % constants.numberOfGenerations == 9):
+                    constants.row10.insert(self.parents[x].col, self.parents[x].fitness)
+            # its the second row
+            else:
+                if (constants.rownum % constants.numberOfGenerations == 0):
+                    # it is in the first row
+                    constants.row1.insert(self.parents[x].col, self.children[x].fitness)
+                elif (constants.rownum % constants.numberOfGenerations == 1):
+                    # its the second row
+                    constants.row2.insert(self.parents[x].col, self.children[x].fitness)
+                elif (constants.rownum % constants.numberOfGenerations == 2):
+                    # it is in the third row
+                    constants.row3.insert(self.parents[x].col, self.children[x].fitness)
+                elif (constants.rownum % constants.numberOfGenerations == 3):
+                    # its the second row
+                    constants.row4.insert(self.parents[x].col, self.children[x].fitness)
+                elif (constants.rownum % constants.numberOfGenerations == 4):
+                    # its the second row
+                    constants.row5.insert(self.parents[x].col, self.children[x].fitness)
+                elif (constants.rownum % constants.numberOfGenerations == 5):
+                    # its the second row
+                    constants.row6.insert(self.parents[x].col, self.children[x].fitness)
+                elif (constants.rownum % constants.numberOfGenerations == 6):
+                    # its the second row
+                    constants.row7.insert(self.parents[x].col, self.children[x].fitness)
+                elif (constants.rownum % constants.numberOfGenerations == 7):
+                    # its the second row
+                    constants.row8.insert(self.parents[x].col, self.children[x].fitness)
+                elif (constants.rownum % constants.numberOfGenerations == 8):
+                    # its the second row
+                    constants.row9.insert(self.parents[x].col, self.children[x].fitness)
+                elif (constants.rownum % constants.numberOfGenerations == 9):
+                    # its the second row
+                    constants.row10.insert(self.parents[x].col, self.children[x].fitness)
+
+        #this is the actual robot for the generation population iteration
+
+
+
 
     def Print(self):
 
         print(" ")
         for x in range(len(self.parents)):
+            print(x)
+            #parent is the
             print(self.parents[x].fitness, self.children[x].fitness)
 
         print(" ")
+
 
 
 
@@ -111,13 +188,36 @@ class PARALLEL_HILL_CLIMBER:
         # os.system("python3 simulate.py GUI")
         best = 100
         bestIndex = 0
+        print("showbest")
         for x in range(len(self.parents)):
+            print(self.parents[x].myID)
             if self.parents[x].fitness < best:
                 bestIndex = x
                 best = self.parents[x].fitness
         self.parents[bestIndex].Start_Simulation("GUI")
         print(best)
-
+        constants.matrix.append(constants.row1)
+        constants.matrix.append(constants.row2)
+        constants.matrix.append(constants.row3)
+        constants.matrix.append(constants.row4)
+        constants.matrix.append(constants.row5)
+        constants.matrix.append(constants.row6)
+        constants.matrix.append(constants.row7)
+        constants.matrix.append(constants.row8)
+        constants.matrix.append(constants.row9)
+        constants.matrix.append(constants.row10)
+        print(constants.matrix)
+        a = np.matrix([constants.row1, constants.row2, constants.row3, constants.row4, constants.row5, constants.row6, constants.row7, constants.row8, constants.row9, constants.row10])
+        mystring = ''
+        #x = np.arange(a)
+        for x in constants.matrix:
+            mystring += '' + str(x)
+        # f = open("matrix.txt", "w")
+        # np.save(f,constants.matrix)
+        # f.close()
+        outfile = TemporaryFile()
+        with open('test.npy', 'wb') as f:
+            np.save(f,constants.matrix)
 
     def Evaluate(self, solutions):
         directOrGUI = "DIRECT"

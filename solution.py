@@ -10,6 +10,9 @@ class SOLUTION:
     def __init__(self, nextAvailableID):
         self.weights = np.random.rand(constants.numSensorNeurons,constants.numMotorNeurons) * 2 - 1
         self.myID = nextAvailableID
+        self.col = nextAvailableID % constants.populationSize
+        print("col is ")
+        print(self.col)
 
 
 
