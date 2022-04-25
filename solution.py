@@ -11,6 +11,7 @@ class SOLUTION:
         self.weights = np.random.rand(constants.numSensorNeurons,constants.numMotorNeurons) * 2 - 1
         self.myID = nextAvailableID
 
+        self.col = nextAvailableID % constants.populationSize
 
 
         self.weights = self.weights * 2 - 1
