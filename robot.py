@@ -57,8 +57,3 @@ class ROBOT:
         strcord = str(xPosition)
         f.write(strcord)
         f.close()
-        print("colnumber")
-        print(constants.colnum)
-        print("rownumber")
-        print(constants.rownum)
-        exit()
