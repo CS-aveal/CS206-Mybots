@@ -101,13 +101,12 @@ class SOLUTION:
         # Motor neurons
         motor1 = pyrosim.Send_Motor_Neuron(name=9, jointName="Torso_FrontLeg")
         motor2 = pyrosim.Send_Motor_Neuron(name=10, jointName="Torso_BackLeg")
-        motor3 = pyrosim.Send_Motor_Neuron(name=11, jointName="Torso_BackLeg")
-        motor4 = pyrosim.Send_Motor_Neuron(name=12, jointName="Torso_LeftLeg")
-        motor5 = pyrosim.Send_Motor_Neuron(name=13, jointName="Torso_RightLeg")
-        motor6 = pyrosim.Send_Motor_Neuron(name=14, jointName="FrontLeg_LowerFrontLeg")
-        motor7 = pyrosim.Send_Motor_Neuron(name=15, jointName="BackLeg_LowerBackLeg")
-        motor8 = pyrosim.Send_Motor_Neuron(name=16, jointName="LeftLeg_LowerLeftLeg")
-        motor9 = pyrosim.Send_Motor_Neuron(name=17, jointName="RightLeg_LowerRightLeg")
+        motor3 = pyrosim.Send_Motor_Neuron(name=11, jointName="Torso_LeftLeg")
+        motor4 = pyrosim.Send_Motor_Neuron(name=12, jointName="Torso_RightLeg")
+        motor5 = pyrosim.Send_Motor_Neuron(name=13, jointName="FrontLeg_LowerFrontLeg")
+        motor6 = pyrosim.Send_Motor_Neuron(name=14, jointName="BackLeg_LowerBackLeg")
+        motor7 = pyrosim.Send_Motor_Neuron(name=15, jointName="LeftLeg_LowerLeftLeg")
+        motor8 = pyrosim.Send_Motor_Neuron(name=16, jointName="RightLeg_LowerRightLeg")
 
 
         # for x in range(0,len(sensors)):
