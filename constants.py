@@ -19,7 +19,7 @@ loop = 1000
 y = np.linspace(0,2 * np.pi, num=1000)
 targetAngles = np.sin(y)
 
-numberOfGenerations = 2
+numberOfGenerations = 10
 
 defaultFit = -0.018336037653125914
 
@@ -27,7 +27,7 @@ numSensorNeurons = 9
 
 numMotorNeurons = 9
 
-populationSize = 2
+populationSize = 10
 
 motorJointRange = 0.2
 
